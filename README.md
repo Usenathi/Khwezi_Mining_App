@@ -1,19 +1,24 @@
-# :earth_americas: GDP dashboard template
+# Mine Safety & Equipment Monitor
 
-A simple Streamlit app showing the GDP of different countries in the world.
+A Streamlit app built from the group's Python scripts and CSV databases.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://gdp-dashboard-template.streamlit.app/)
+## Run it
+1. Open this folder in VS Code (File > Open Folder).
+2. Open a terminal (Ctrl+`) and create an environment:
+   - `python -m venv .venv`
+   - Windows: `.venv\Scripts\activate`   Mac/Linux: `source .venv/bin/activate`
+3. `pip install -r requirements.txt`
+4. `streamlit run app.py` (or press F5 and choose "Run Streamlit app").
 
-### How to run it on your own machine
+Sign in with a username and password from `data/login_database.csv`.
 
-1. Install the requirements
+## Structure
+- `app.py` - login + dashboard
+- `pages/` - Worker Safety, Incidents, Equipment, Maintenance, Risk Assessment, Reports, Users
+- `functions/` - `auth.py` (login + roles), `data_loader.py`, `rules.py` (thresholds and risk logic)
+- `data/` - the CSV databases (new incidents are appended to `safety_incidents_database.csv`)
+- `original_scripts/` - your original files, untouched
 
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+## Notes
+- Availability rule changed: the originals flagged "low availability" above 90/100; the app uses below 90% = warning, below 80% = critical.
+- Passwords in the login CSV are plain text. Fine for a class project; hash them for real use.
