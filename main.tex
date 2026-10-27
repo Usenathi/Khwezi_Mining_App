@@ -1,0 +1,280 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\textbf{Faculty of Engineering and The Built Environment}
+
+\textbf{University of Witwatersrand,}
+
+\begin{quote}
+\textbf{Johannesburg, South Africa.}
+\end{quote}
+
+\includegraphics[width=4.83775in,height=1.965in,alt={A logo of a school of mining engine Description automatically generated}]{./media/image1.jpeg}
+
+\begin{quote}
+\textbf{School of Mining Engineering MINN2020A: Computer Programming for
+Mining}
+\end{quote}
+
+PROJECT
+
+\begin{quote}
+\textbf{18th August 2026}
+\end{quote}
+
+\section{DESIGN, DEVELOPMENT AND DOCUMENTATION OF AN AFRICAN CRITICAL
+MINERALS
+APPLICATION}\label{design-development-and-documentation-of-an-african-critical-minerals-application}
+
+Dr. Milka Madahana and Mr. Tebatso Phala
+
+GROUP 17 - Usenathi Ketshini 2839943
+                  - Lelaka Nkwadi 3024254
+                  - Leshaba Antpone 2845754
+                  - Gumbi Samkelo 3002328
+
+
+
+
+\end{page}
+\section{ABSTACT}
+
+The Mining Health, Safety and Equipment Monitoring Application was developed using Python and Streamlit to integrate worker safety monitoring, incident management, equipment monitoring, maintenance tracking, risk assessment, and reporting into a single platform. Synthetic mining datasets were used to simulate real-world operations. The system successfully identified safety risks, critical equipment conditions, maintenance requirements, and generated automated alerts to support decision-making. Results demonstrate that the application can improve safety management, equipment reliability, and operational efficiency in a mining environment.
+
+\section{INTRODUCTION}
+
+Khwezi Mining requires effective equipment monitoring to support a safe and efficient working environment. Equipment failures can lead to production delays, increased prices for maintenance and high chances of risks occuring for workers. This project introduces the Khwezi Mining Health, Safety and Equipment Monitoring app, which is designed to help users manage equipment, track maintenance, monitor equipment conditions, equipment status and identify potential risks through safety alerts.  The application was developed using Python and Streamlit and was supported by synthetic datasets designed to represent a realistic South African surface mining operation. Through data analysis, visualisation, and automated alert generation, the system provides decision-support information that assists managers, engineers, and safety personnel in monitoring operational performance and identifying areas requiring corrective action. 
+
+\section{BACKGROUND}
+
+Khwezi Mining relies on equipment to support its mining operations. Equipments in mining operations helps carry out daily activities efficiently and safely. However equipment can have status challenges such as having high temperatures, excessive vibration, engine problems, damaged tyres and break failures.  And it is very important for the mine to have system to identify these problems because if they are not seen or identified early they may cause equipment breakdown, loss in productivity due to equipment not working, maintenance cost increase and high risk for workers. Therefore reqular monitoring of the equipment and maintaining equipment can reduce the chances of risks occuring in the mines. 
+
+Information such as operating hours, fuel consumption and equipment status record helps the mine in identifying possible problems the equipment might have, and if there is maintenance required.  That is why it is important for a mine to have one system to monitor mine equipement to make it easier for responsible personnel to take informed decisions. Khwezi Mining Health, Safety and Equipment monitoring app app was developed, to track equipments records, equipment condition information, maintenance details and put safety alerts together into one platform.  It aims to help users identify possible equipment problems and keep track of equipment maintenance, aswell as responding to alerts and warnings. The application is intended to contribute to a safer and more efficient working environment at Khwezi Mining. 
+
+\section{ METHODOLOGY}
+
+\subsection{Development Approach}
+
+The application was developed using an incremental, modular approach, in which the system was broken into functional modules (access control, worker safety, safety incidents, equipment monitoring, risk assessment, alerts and dashboard) that were designed, implemented and tested individually before being integrated into a single platform. The development followed the process demonstrated in the course of lectures, moving from the mining engineering problem to a flowchart, and pseudocode for each function, and finally to the Python implementation. Flowcharts and pseudocode were produced for every major function before coding, so that the logic of each module could be verified against the project requirements. All source code was written by the group members, who referenced the lecture material from MINN2020A throughout the development process, and each member's code was pushed to their individual GitHub account for version control and traceability of individual contributions.
+
+\subsection{Data Collection and Database Design}
+
+Because no real mine data could be obtained, three realistic synthetic datasets were created and stored as CSV files, which satisfies the data storage requirement of the project. The datasets were designed to reflect the variables suggested in the project specification and were populated with plausible values representative of a South African surface mining operation.
+
+The \textbf{workers database}
+(\texttt{workers\_database\_95.csv}) contains 95 worker records with
+twelve fields: Worker ID, Name, Department, Job Role, Shift, PPE
+Compliance, Safety Training Status, Fatigue Level, Safety
+Observations, Near Misses, Previous Incidents and Risk Level. This
+dataset supports the worker's health and safety monitoring function,
+including PPE compliance checks, fatigue warnings, and identification
+of high-risk workers.
+
+The \textbf{login database}
+(\texttt{login\_database.csv}) stores the user credentials and roles
+for the access control module, with one record per group member
+representing the five specified roles: Administrator, Safety Officer,
+Mining Engineer, Maintenance Engineer and Manager. The Role field is
+used by the application to enforce role-based access control, so that
+each user only sees the functions permitted for their role in
+accordance with the permission matrix in the project specification.
+
+The \textbf{safety incidents database}
+(\texttt{safety\_incidents\_database.csv}) contains 40 incident
+records with sixteen fields, covering Incident ID, Date, Time, Shift,
+Location, Department, Worker ID, Worker Name, Job Role, Incident Type,
+Severity, Injury Status, Lost-Time Injury status, Cause, Corrective
+Action and Incident Status. This database serves as the central
+incident repository and supports the add, view, search, filter, count,
+and trend-analysis functions.
+
+A fourth CSV file, the \textbf{equipment database}, stores equipment
+records (equipment type, operating hours, temperature, vibration,
+fuel consumption, maintenance status, downtime and availability) and
+drives the equipment condition, maintenance and availability
+functions.
+
+\subsection{System Design and Implementation}
+
+The application was implemented in Python 3.10 using the Streamlit framework for the graphical user interface, as recommended in the project specification for rapid development of interactive data-driven applications. Pandas was used for all data operations (reading the CSV files, filtering, grouping, counting and generating summary statistics), and Matplotlib and Plotly were used for data visualisation on the dashboard. The design of each module is summarised as follows.
+
+\textbf{Access control.}The login portal authenticates the username and password against the login database and retrieves the user's role. A role-permission matrix, implemented as a dictionary structure in Python, maps each role to the functions it may access, reproducing Table 1 of the project specification. Invalid credentials and unauthorised function requests are rejected with appropriate feedback messages rather than allowing the program to crash.
+
+\textbf{Worker safety monitoring.} The module reads the workers
+database and applies rule-based logic to flag unsafe conditions:
+workers with non-compliant PPE status, incomplete safety training,
+fatigue levels above the defined threshold, and workers classified
+as high risk. Flagged workers trigger warning messages on the
+dashboard.
+
+\textbf{Incident management.} The incident module loads the safety
+incidents database into a Pandas DataFrame and provides functions to
+add a new incident (with input validation), view, search and filter
+incidents by date, shift, department, type or severity, count
+incidents, and analyse trends such as incidents per department,
+per shift and per incident type.
+
+\textbf{Equipment condition monitoring.}Threshold-based logic classifies each monitored parameter into NORMAL, WARNING or CRITICAL states using the educational prototype thresholds from the project specification (temperature: normal below 80 °C, warning 80–100 °C, critical above 100 °C; vibration: normal below 5 mm/s, warning 5–8 mm/s, critical above 8 mm/s). The system generates an alert message with the equipment ID, parameter, measured value and recommended action whenever a warning or critical state is detected.
+
+\textbf{Maintenance monitoring.}The module identifies equipment that is due for maintenance, overdue, currently under maintenance, or showing excessive downtime or low availability. Equipment availability is calculated as:
+Availability = Operating Time/ (Operating Time + Downtime) *100.
+
+\textbf{Risk assessment.}A risk score is calculated for each risk item as Risk Score = Likelihood times*Consequence using a 1 to 5 scale for each factor. Scores are automatically classified as Low (1–4), Medium (5–9), High (10–16) or Critical (17–25), and high or critical results display a prominent warning.
+
+\textbf{Alerts and notifications.}Alert rules were defined for high equipment temperature, high vibration, low PPE compliance, high fatigue, critical incidents, excessive downtime, overdue maintenance, and high-risk observations. Each alert is formatted as a structured monitoring alert showing the severity level, affected item, measured value, and recommended action.
+
+\textbf{Dashboard and data analysis.}The Streamlit dashboard consolidates key performance indicators (total workers, total incidents, near misses, high-risk observations, PPE compliance rate, equipment availability and active alerts) with interactive charts. Interactive data-analysis functions were implemented so that users can answer the mining engineering questions listed in Appendix A of the project specification, such as which department records the most incidents, which equipment has the highest downtime and lowest availability, and how incidents differ between day and night shifts.
+
+\subsection{Use of AI Assistance}
+The group declares that an AI tool (Claude, Anthropic) was used to assist with the front-end (user interface) portion of the development. All application logic, data analysis code and database design were written by the group members themselves. The AI-assisted interface code was reviewed, tested and modified by the group to ensure it integrated correctly with the group's own modules, and every group member can explain the functioning of the complete application.
+
+\subsection{5 Testing and Validation}
+Each module was tested individually using the CSV datasets before integration: the login function was tested with valid and invalid credentials for all five roles, the threshold logic was tested with values on both sides of each boundary, and the incident functions were tested by adding and searching records. After integration, end-to-end tests were performed by logging in as each role and verifying that the permitted functions matched the permission matrix, that alerts were generated correctly for abnormal data, and that the dashboard figures agreed with manual calculations from the CSV files.
+
+
+\section{Results and Analyses}
+
+The Mining Health, Safety and Equipment Monitoring Application
+successfully integrated worker safety monitoring, incident management,
+equipment condition monitoring, maintenance tracking, risk assessment
+and reporting into a single platform. The dashboard analyzed data from
+25 workers, 40 safety incidents, and 50 equipment units. Results showed
+a PPE compliance rate of 72\%, with 7 workers identified as
+non-compliant and 3 workers having expired safety training records.
+In addition, 10 workers exhibited high fatigue levels of about 4 to 5
+and 8 workers were classified as high or critical risk, indicating
+areas requiring immediate management attention.
+
+The safety incident module recorded 40 incidents, of which 9 remained
+open or under investigation. Incident severity analysis showed that
+about 16 incidents considered to be serious occurred most frequently,
+followed by 10 moderate and 10 minor incidents, while 4 incidents were
+classified as critical. Vehicle or haulage incidents were identified
+as the most common incident type. Analysis of incident causes revealed
+contributions from operator error, poor visibility, poor housekeeping,
+unsafe work procedures and loose material, highlighting both
+operational and behavioral safety challenges within the mining
+environment.
+
+Equipment monitoring results demonstrated the effectiveness of
+threshold-based condition monitoring. The system identified 20
+equipment units in critical condition, including assets that exceeded
+the predefined temperature threshold of 100$^\circ$C and vibration
+threshold of 8 mm/s. Examples included equipment temperatures reaching
+107.7$^\circ$C and vibration levels up to 9.7 mm/s. These findings
+indicate potential mechanical deterioration and the need for immediate
+inspection and maintenance intervention.
+
+The maintenance module identified 22 equipment units due for
+maintenance, while average equipment availability was calculated at
+85.1\% with an average downtime of 30.9 hours. Furthermore, 13 units
+reported critical engine conditions. The alert management system
+generated a total of 169 alerts, including critical engine warnings,
+excessive temperature alerts, abnormal vibration notifications, low
+availability warnings and maintenance due reminders. These alerts
+provide proactive decision-support information that can assist
+engineers and supervisors in prioritizing corrective actions before
+failures or incidents occur.
+
+Overall, the results demonstrate that the application successfully
+transformed mining data into actionable information. The combination
+of dashboards, risk assessments, automated alerts and reporting
+functionality enables improved safety monitoring, enhanced equipment
+reliability and more informed operational decision-making.
+
+
+CONCLUSION 
+
+The Mining Health, Safety and Equipment Monitoring Application was developed using Python and Streamlit to integrate worker safety monitoring, incident management, equipment monitoring, maintenance tracking, risk assessment, and reporting into a single platform. Synthetic mining datasets were used to simulate real-world operations. The system successfully identified safety risks, critical equipment conditions, maintenance requirements, and generated automated alerts to support decision-making. Results demonstrate that the application can improve safety management, equipment reliability, and operational efficiency in a mining environment.
+
+RECOMMENDTATIONS
+
+\begin{itemize}
+    \item Integrate real-time sensor data to improve monitoring accuracy and responsiveness.
+    \item Expand the databases to include larger and more diverse mining datasets.
+    \item Implement predictive maintenance and machine learning techniques to identify failures before they occur.
+    \item Enhance the alert system with automated notification features such as email or SMS alerts.
+    \item Conduct testing using real mine operational data to further validate system performance and reliability.
+\end{itemize}
+
+
+
+
+
+\end{document}
